@@ -1,0 +1,305 @@
+CSS LAYOUTING
+
+#1. DISPLAY
+
+tag pada html digunakan untuk memberikan arti pada sebuah konten. 
+
+tag <div> dan <span> tidak memiliki arti apapun. Keduanya digunakan untuk mengelompokkan tag-tag HTML
+dan memberikan informasi terhadap tag-tag tersebut.
+
+PROSES:
+- buat web sederhana
+- kelompokkan sejumlah tag ke dalam div masing-masing
+- pilih sebuah phrase yang ingin dimasukkan ke dalam span tag
+- apa hubungan antara tag div, span dengan display?
+  
+  - setiap tag memiliki default property "display"
+  - default property "display" untuk "div" adalah "block"
+  - default property "display" untuk "span" adalah "inline"
+
+* setiap tag pada HTML berada dalam sebuah kotak. 
+* property "display" pada CSS mengatur perilaku dari kotak tersebut
+* setiap tag pada HTML memiliki nilai default untuk property "display"
+* tapi kita juga dapat mengubah perilaku dari tag tersebut dengan mengganti value-nya
+* empat jenis value dari sebuah property "display": block, inline, inline-block, none
+
+
+
+#2. DIMENSI dan OVERFLOW
+
+properti untuk dimensi ada dua yaitu: 
+a. width
+b. height
+
+satuan untuk dimensi:
+a. px (absolut)
+b. % (relatif)
+c. in, cm, mm, pt, pc
+
+
+overflow adalah property CSS yang khusus digunakan untuk menangani kasus saat suatu element lebih besar dari parent element
+
+ada 4 value dari property "overflow"
+a. visible: 
+b. auto: menambahkan scroll
+c. hidden: 
+d. scroll
+
+
+#3. BOX MODEL
+
+KONSEP:
+a. Setiap elemen di halaman berada dalam sebuah box 
+b. Kita bisa mengatur ukuran dan posisi kotak tersebut
+c. Kita bisa memberi warna/gambar sebagai background kotak tersebut
+
+CSS BOX MODEL mendefinisikan kotak yang dihasilkan oleh sebuah elemen, lalu menampilkannya sesuai dengan format visualnya.
+
+Empat komponen css box model
+a. margin: area transparan di luar kotak border
+			- cara pakai margin
+					
+			- overlapping margin
+					terjadi ketika menggabungkan dua buah margin, biasanya atas dengan bawah atau kiri dengan kanan
+					SAAT MENGGUNAKAN DISPLAY: INLINE_BLOCK, AKAN MUNCUL JARAK YANG TIDAK BISA DIREKATKAN
+     UNTUK MENGHILANGKAN JARAK ITU CARANYA DENGAN MENGHILANGKAN JARAK ANTARA KODE ELEMENT DI HTML
+
+     KALAU OVERLAPPING VERTIKAL YANG DIPAKAI ADALAH MARGIN PALING BESAR
+     KALAU OVERLAPPING HORIZONTAL YANG DIPAKAI ADALAH JUMLAH KEDUA MARGIN
+
+   - negatif margin
+					margin-bottom:50px;margin-top:-50px
+
+   - auto
+     set margin-left:auto dan margin-right:auto maka element akan berada ditengah-tengah konten
+
+   - shorthand
+
+b. border: batas di sekeliling content dan padding
+			- syntax=border:width style color;
+			- border juga menambah ukuran elemen
+
+
+c. padding: area transparan di dalam kotak antara content dan border
+   - padding tidak bisa diberi nilai negatif
+   - padding tidak punya nilai auto
+   - padding menambah ukuran dari box yang dibuat
+   -
+
+d. content: teks atau gambar
+
+
+# BOX-SIZING
+- property khusus membuat developer tidak perlu mengkalkulasi ulang lebar dan tinggi total suatu element
+- dulu developer perlu menghitung nilai width-padding kiri kanan-border kiri kanan untuk menentukan width yang sesuai
+- sekarang masalah itu bisa diatasi dengan property=box-sizing:border-box; berapapun padding dan border kita
+
+
+# CSS RESET
+- teknik yang dapat membuat kita mengatur ulang nilai-nilai default 
+- dari elemen-elemen yang ada pada html khususnya margin dan padding
+- ELEMENT "body" memiliki margin dan padding default
+- makanya ada jarak antara element "body" dengan keseluruhan halaman web
+- SOLUSI: tentukan "body{margin:0px;} pada file css
+
+- KENAPA KITA PERLU MELAKUKAN RESET?
+- Supaya memiliki kendali penuh terhadap setiap elemen yang kita buat
+
+- CARA MELAKUKAN RESET UNTUK SEMUA ELEMENT?
+- Gunakan selector universal
+- contoh: ketik "*{margin:0px;padding:0px;}"
+
+- CSS RESET BY MEYER
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+# MEMBUAT WEB SEDERHANA
+- cari gambar gratis di unsplash.com
+
+
+# CSS FLOAT
+- properti CSS untuk mengatur posisi sebuah elemen
+
+- sebuah elemen dapat dipaksa untuk berada di sebelah kiri atau sebelah kanan 
+- dari parent/pembungkus menggunakan properti ini.
+
+- kalau cara konvensional bisa mengatur posisi elemen pakai margin, padding
+
+- value dari property "float" ada tiga:
+- none
+- left
+- right
+
+- normal flow dan out-of-flow
+- adalah perilaku dari elemen-elemen ketika kita beri css style
+
+- pada pembelajaran sebelumnya kita masih mengatur elemen secara "normal flow"
+
+- sedangkan property "float" merupakan tipe "out-of-flow"
+
+- Kapan kita membutuhkan property "float"?
+  - 1. Text wrapping (membuat teks mengelilingi gambar/elemen)
+  - 2. Image gallery (membuat serangkaian gambar menjadi gallery)
+  - 3. Multi-column layout (membuat halaman memiliki beberapa kolom)
+ 
+- 1. Text wrapping
+
+- 2. Image gallery
+
+- 3. Multi-column layout
+
+
+# CSS CLEAR
+- Cara membersihkan float atau mencegah container collapse:
+  - menggunakan property overflow
+  - menggunakan <div> kosong
+  - menggunakan teknik micro clearfix
+
+- clearfix gallagher code
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
+# CSS POSITION: STATIC & RELATIVE
+
+- CSS position sangat penting karena membantu anda menentukan tata letak elemen html sesuai keinginan
+- CSS position memungkinkan kita untuk menggeser sebuah elemen tanpa mempengaruhi elemen di sekitarnya
+- Property margin akan mempengaruhi letak elemen di sekitarnya
+
+- Value dari property position ada 4:
+  - static
+  - relative
+  - absolute
+  - fixed
+
+- Default value dari property position adalah "static"
+- Menggunakan position selain "static" akan membuat sebuah elemen 
+- seolah-olah berbeda dimensi dari elemen lainnya
+- Elemen yang diberi position selain "static" dapat menggunakan properti "top", "left", "bottom", "right"
+- untuk mengatur posisinya
+
+- Relative value
+  Ketika kita memberi value relative (lengkap dengan top, bottom, left atau right) pada sebuah elemen
+  ruang yang ditinggalkan tidak ditempati oleh elemen lain
+  
+  Elemen akan bergerak relatif terhadap posisi semulanya
+
+  Jika memberi value top: 0px dan left: 0px, elemen tidak akan berubah posisi
+
+  Biasanya kita jarang menggeser elemen dengan property position relative
+  kita menggunakan property relative untuk membuatnya keluar dari dimensi saja
+
+  Kalau ingin menggeser elemen bisa menggunakan property position absolute
+
+
+# CSS POSITION: ABSOLUTE & FIXED
+
+- Absolute value
+  Ketika kita memberi property absolute ke sebuah elemen maka
+  elemennya maju satu dimensi dan tempat sebelumnya digunakan oleh elemen selanjutnya
+
+  Elemen akan bergerak relatif terhadap posisi parent terdekatnya
+  selama parent terdekatnya memiliki posisi yang juga non-static
+
+  Jika kita memberi property top: 0px dan left: 0px,
+  maka elemen akan berada di ujung kiri atas dari element parent terdekat yang
+  position-nya non static
+
+  Untuk membuat sebuah elemen berada di dalam elemen parent div
+  kita bisa memberi property position relative kepada elemen parent div
+
+
+- Fixed value
+  Ketika kita memberi property fixed ke sebuah elemen dengan top, bottom, left, right
+  maka dia akan selalu bergerak relatif terhadap window browser
+  Artinya elemen dengan position fixed tidak peduli dengan elemen parent-nya
+  meskipun parent-nya sudah non-static dan halaman di scroll
+
+  elemen fixed digunakan untuk membuat top bar navigasi
+
+
+# Z-INDEX
+
+- z-index digunakan untuk mengatur tumpukan dari elemen dengan position non-static
+- semakin besar nilai z-index suatu elemen, posisinya akan semakin depan
+- beri nilai 9999 pada z-index suatu elemen supaya posisinya paling depan
+- beri nilai -9999 pada z-index suatu elemen supaya posisinya paling belakang
+
+- Jika ada 3 buah div dengan position absolute maka elemen paling akhir ada di posisi paling atas
+
+
+# PENGGUNAAN LAIN DARI POSITION
+- cara menggunakan property top,left,bottom,right pada position non-static
+- tentukan left:0px dan right:0px, supaya div ditarik dari kiri ke kanan
+- tentukan top:0px dan bottom:0px, supaya div ditarik dari atas ke bawah

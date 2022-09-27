@@ -1,0 +1,109 @@
+body{
+    margin:0px;
+}
+
+.container{
+    border: 2px solid black;
+    width: 600px;
+    margin:auto;
+    padding:5px;
+    
+}
+
+.container img{
+    float: right;
+    margin: 15px;
+
+}
+
+.clear{
+    clear:right;
+}
+
+.container2{
+    border: 2px solid black;
+    width: 600px;
+    margin:auto;
+    padding:5px;
+    
+}
+
+.kotak{
+    width: 100px;
+    height: 100px;
+    color: black;
+    background-color: pink;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    margin: 2px;
+    float:left;
+    
+}
+
+.clear1{
+    clear: left;
+}
+
+.container3{
+    border: 2px solid black;
+    width: 800px;
+    margin:auto;
+    padding:5px;
+    
+}
+
+.container3 .kiri{
+    background-color: red;
+    width: 150px;
+    float:left;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.tengah{
+    background-color: green;
+    width:500px;
+    float:left;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.kanan{
+    background-color: blue;
+    width:150px;
+    float:left;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.clear2{
+    clear:left;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+ .cf:before,
+ .cf:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+ 
+ .cf:after {
+     clear: both;
+ }
+ 
+ /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+ .cf {
+     *zoom: 1;
+ }
